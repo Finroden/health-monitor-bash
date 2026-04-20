@@ -28,3 +28,15 @@ echo "Zajete miejsce na dysku: ${GREEN}$DISK_USAGE${NC}"
 echo "Zuzycie procesora: ${GREEN}$CPU_USAGE${NC}"
 echo "Zuzycie pamieci RAM: ${GREEN}$RAM_USAGE${NC}"
 echo "-------------------------------"
+# --- SEKCJA LOGOWANIA --- 
+# Pobranie aktualnej daty
+
+TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+
+# Sciezka do pliku z logami
+
+LOG_FILE="$HOME/healt-monitor/logs/system_health.log"
+
+# Zapis do pliku tekstowego
+
+echo "[$TIMESTAMP] CPU: $CPU_USAGE | RAM:  $RAM_USAGE | DISK: $DISK_USAGE" >> "$LOG_FILE"
